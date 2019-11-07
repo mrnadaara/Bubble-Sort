@@ -19,7 +19,7 @@ def bubble_sort_by(arr)
   n.times do
     0.upto(length) do |i|
       sort = yield(arr[i], arr[i + 1])
-      arr[i], arr[i + 1] = arr[i + 1], arr[i] if sort > 0
+      arr[i], arr[i + 1] = arr[i + 1], arr[i] if sort.positive?
     end
   end
   arr
