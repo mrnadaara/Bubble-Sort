@@ -1,17 +1,15 @@
 def bubble_sort(arr)
-  n = arr.length - 1
-  10.times { |i|
-      if arr[i - 1] > arr[i]
-        arr[i - 1], arr[i] = arr[i], arr[i - 1]
+  
+  n = arr.length
+  n.times do
+    arr.each_with_index do |a,j|
+      if (arr[j-1] > arr[j] )
+        arr[j-1], arr[j] = arr[j], arr[j-1]
+        puts "#{arr[j-1]}, #{arr[j]} = #{arr[j]}, #{arr[j-1]}"
       end
-  }
+    end
+  end
+  return arr
 end
 
-#puts bubble_sort([1,5,4,6,2,3])
-
-val = [1,5,4,6,2,3]
-
-
-10.times {|i|
-    puts i
-}
+puts bubble_sort([1,5,4,6,2,3])
